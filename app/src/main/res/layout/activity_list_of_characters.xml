@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".listofcharacters.presentation.view.ListOfCharactersActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/support_simple_spinner_dropdown_item"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
