@@ -13,12 +13,12 @@ val key: String = gradleLocalProperties(rootDir).getProperty("BASE_URL") ?: ""
 
 android {
     namespace = "com.example.personagensdisney"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.personagensdisney"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
