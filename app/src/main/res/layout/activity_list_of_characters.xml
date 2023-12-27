@@ -7,8 +7,10 @@
     tools:context=".listofcharacters.presentation.view.ListOfCharactersActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListOfCharacters"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/support_simple_spinner_dropdown_item"/>
+        tools:itemCount="5"
+        tools:listitem="@layout/item_of_list_characters" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
