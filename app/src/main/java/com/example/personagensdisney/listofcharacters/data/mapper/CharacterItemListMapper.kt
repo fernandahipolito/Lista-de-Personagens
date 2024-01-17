@@ -7,7 +7,6 @@ import com.example.personagensdisney.listofcharacters.domain.entity.Character
 import com.example.personagensdisney.listofcharacters.domain.entity.Data
 import com.example.personagensdisney.listofcharacters.domain.entity.Info
 
-
 internal class CharacterItemListMapper{
     private fun mapInfoDtoToInfo(response: InfoResponse): Info {
         return Info(
@@ -28,8 +27,8 @@ internal class CharacterItemListMapper{
 
     private fun mapCharacterDtoToCharacter(response: CharacterResponse): Character {
         return Character(
-            info = mapInfoDtoToInfo(response.infoResponse),
-            data = mapDataDtoToData(response.dataResponse)
+            info = mapInfoDtoToInfo(response.info),
+            data = mapDataDtoToData(response.data)
         )
     }
 
@@ -37,3 +36,4 @@ internal class CharacterItemListMapper{
         return responseList.map { mapCharacterDtoToCharacter(it) }
     }
 }
+//acertar o mapper
