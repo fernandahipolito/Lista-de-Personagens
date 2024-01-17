@@ -36,3 +36,4 @@ internal class CharacterItemListMapper{
         return responseList.map { mapCharacterDtoToCharacter(it) }
     }
 }
+//acertar o mapper
