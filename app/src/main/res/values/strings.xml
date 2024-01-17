@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PersonagensDisney</string>
+    <string name="inexpected_error">Opa, ocorreu um erro inesperado</string>
 </resources>
