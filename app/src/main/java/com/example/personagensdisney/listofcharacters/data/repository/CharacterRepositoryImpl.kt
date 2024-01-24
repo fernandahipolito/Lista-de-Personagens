@@ -5,11 +5,11 @@ import com.example.personagensdisney.listofcharacters.data.mapper.CharacterItemL
 import com.example.personagensdisney.listofcharacters.domain.entity.Character
 import com.example.personagensdisney.listofcharacters.domain.repository.CharacterRepository
 
-internal class CharacterRepositoryImpl (
+internal class CharacterRepositoryImpl(
     private val dataSource: CharacterDataSource,
     private val mapper: CharacterItemListMapper
 ) : CharacterRepository {
-    override suspend fun getAllCharacters(): List<Character> {
-        return mapper.mapCharacterDtoToCharacterList(dataSource.getAllCharacters())
+    override suspend fun getAllCharacters(): Character {
+        return mapper.mapCharacterDtoToCharacter(dataSource.getAllCharacters())
     }
 }

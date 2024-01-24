@@ -37,7 +37,7 @@ class ListOfCharactersActivity : AppCompatActivity() {
     private fun observeViewModel() {
         viewModel.characterState.observe(this) { state ->
             when (state) {
-                is ListOfCharactersViewState.Success -> adapter.updateAdapter(state.characters)
+                is ListOfCharactersViewState.Success -> adapter.updateAdapter(state.data)
                 is ListOfCharactersViewState.Error -> showError()
             }
         }

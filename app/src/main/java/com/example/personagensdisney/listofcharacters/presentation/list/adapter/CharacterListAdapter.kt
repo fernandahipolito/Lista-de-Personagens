@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.personagensdisney.databinding.ItemOfListCharactersBinding
-import com.example.personagensdisney.listofcharacters.domain.entity.Character
+import com.example.personagensdisney.listofcharacters.domain.entity.Data
 import com.example.personagensdisney.listofcharacters.presentation.list.viewholder.CharacterViewHolder
 
 internal class CharacterListAdapter() :
     RecyclerView.Adapter<CharacterViewHolder>() {
 
-    private val characters: MutableList<Character> = mutableListOf()
+    private val data: MutableList<Data> = mutableListOf()
+
     //criar metodo update list recebe a nova lista e limpa a antiga
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -24,17 +25,18 @@ internal class CharacterListAdapter() :
             )
         return CharacterViewHolder(binding)
     }
+
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.bind(characters[position])
+        holder.bind(data[position])
     }
 
     override fun getItemCount(): Int {
-        return characters.size
+        return data.size
     }
 
-    fun updateAdapter(newListOfCharacters: List<Character>) {
-        characters.clear()
-        characters.addAll(newListOfCharacters)
+    fun updateAdapter(newListOfData: List<Data>) {
+        data.clear()
+        data.addAll(newListOfData)
         notifyDataSetChanged()
     }
 }
