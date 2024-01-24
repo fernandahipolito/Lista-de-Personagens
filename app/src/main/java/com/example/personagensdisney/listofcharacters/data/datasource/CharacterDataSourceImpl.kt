@@ -5,7 +5,7 @@ import com.example.personagensdisney.listofcharacters.data.remote.service.Charac
 
 internal class CharacterDataSourceImpl(private val service: CharacterService) :
     CharacterDataSource {
-    override suspend fun getAllCharacters(): List<CharacterResponse> {
+    override suspend fun getAllCharacters(): CharacterResponse {
         return service.getAllCharacters()
     }
 }

@@ -2,13 +2,16 @@ package com.example.personagensdisney.listofcharacters.presentation.list.viewhol
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.personagensdisney.databinding.ItemOfListCharactersBinding
-import com.example.personagensdisney.listofcharacters.domain.entity.Character
+import com.example.personagensdisney.listofcharacters.domain.entity.Data
+import com.squareup.picasso.Picasso
 
 internal class CharacterViewHolder(private val binding: ItemOfListCharactersBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(character: Character) {
-        binding.imgCharacter.setImageResource(character.data.imageUrl.toInt())
-        binding.txtNameCharacter.text = character.data.name
-        binding.lstOfFilms.text = character.data.getTop3Films()
+    fun bind(data: Data) {
+        Picasso.get()
+            .load(data.imageUrl)
+            .into(binding.imgCharacter)
+        binding.txtNameCharacter.text = data.name
+        binding.lstOfFilms.text = data.getTop3Films()
     }
 }

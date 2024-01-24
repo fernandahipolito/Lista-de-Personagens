@@ -16,7 +16,7 @@ internal class ListOfCharactersViewModel(private val getCharactersListUseCase: G
         viewModelScope.launch {
             try {
                 val characters = getCharactersListUseCase()
-                _characterState.value = ListOfCharactersViewState.Success(characters)
+                _characterState.value = ListOfCharactersViewState.Success(characters.data)
             } catch (e: Exception) {
                 _characterState.value =
                     ListOfCharactersViewState.Error(e.message ?: "Erro desconhecido")

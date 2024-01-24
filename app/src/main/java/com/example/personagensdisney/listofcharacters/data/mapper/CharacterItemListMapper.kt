@@ -7,7 +7,7 @@ import com.example.personagensdisney.listofcharacters.domain.entity.Character
 import com.example.personagensdisney.listofcharacters.domain.entity.Data
 import com.example.personagensdisney.listofcharacters.domain.entity.Info
 
-internal class CharacterItemListMapper{
+internal class CharacterItemListMapper {
     private fun mapInfoDtoToInfo(response: InfoResponse): Info {
         return Info(
             totalPages = response.totalPages,
@@ -19,21 +19,16 @@ internal class CharacterItemListMapper{
 
     private fun mapDataDtoToData(response: DataResponse): Data {
         return Data(
-           imageUrl = response.imageUrl,
+            imageUrl = response.imageUrl.toString(),
             name = response.name,
             films = response.films
         )
     }
 
-    private fun mapCharacterDtoToCharacter(response: CharacterResponse): Character {
+    fun mapCharacterDtoToCharacter(response: CharacterResponse): Character {
         return Character(
             info = mapInfoDtoToInfo(response.info),
-            data = mapDataDtoToData(response.data)
+            data = response.data.map { mapDataDtoToData(it) }
         )
     }
-
-    fun mapCharacterDtoToCharacterList(responseList: List<CharacterResponse>): List<Character> {
-        return responseList.map { mapCharacterDtoToCharacter(it) }
-    }
 }
-//acertar o mapper
